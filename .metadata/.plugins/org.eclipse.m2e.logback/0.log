@@ -88,3 +88,10 @@
 2025-10-17 07:53:16,604 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\JenkinsF\Expense_Backend\src\test\resources
 2025-10-17 07:53:16,605 [Worker-0: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of Expense_Backend
 2025-10-17 07:53:16,605 [Worker-0: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for Expense_Backend
+2025-10-17 08:44:53,303 [Worker-50: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:Expense_backend:0.0.1-SNAPSHOT @ C:\JenkinsF\Expense_Backend\pom.xml.
+2025-10-17 08:44:57,972 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-17 08:44:57,977 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-17 08:44:58,007 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\JenkinsF\Expense_Backend\src\test\resources
+2025-10-17 08:44:58,012 [Worker-50: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of Expense_Backend
+2025-10-17 08:44:58,013 [Worker-50: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for Expense_Backend
+2025-10-17 08:45:12,359 [Worker-56: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:Expense_backend:0.0.1-SNAPSHOT @ C:\JenkinsF\Expense_Backend\pom.xml.
