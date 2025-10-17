@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/expenses")
-@CrossOrigin(origins = "http://localhost:5173") // dev origin
+@CrossOrigin(origins = "*") // dev origin
 public class ExpenseController {
 
     private static final Logger log = LoggerFactory.getLogger(ExpenseController.class);
@@ -30,7 +30,7 @@ public class ExpenseController {
     }
 
     // ✅ GET /api/expenses and /api/expenses/
-    @GetMapping(path = {"", "/"}, produces = "application/json")
+    @GetMapping(path = { "", "/" }, produces = "application/json")
     public List<Expense> listAll() {
         log.info("Received GET on /api/expenses (listAll)");
         return service.findAll();
@@ -51,7 +51,7 @@ public class ExpenseController {
     }
 
     // ✅ POST /api/expenses , /api/expenses/ , /api/expenses/add
-    @PostMapping(path = {"", "/", "/add"}, consumes = "application/json", produces = "application/json")
+    @PostMapping(path = { "", "/", "/add" }, consumes = "application/json", produces = "application/json")
     public ResponseEntity<Expense> add(@RequestBody Expense expense) {
         log.info("Received POST on /api/expenses (add)");
         expense.setId(null); // always create new
@@ -60,12 +60,13 @@ public class ExpenseController {
     }
 
     // ✅ PUT /api/expenses/{id} or /api/expenses/update
-    @PutMapping(path = {"/update", "/{id}"}, consumes = "application/json", produces = "application/json")
+    @PutMapping(path = { "/update", "/{id}" }, consumes = "application/json", produces = "application/json")
     public ResponseEntity<Expense> update(@PathVariable(required = false) Long id,
-                                          @RequestBody Expense updated) {
+            @RequestBody Expense updated) {
         Long targetId = id == null ? updated.getId() : id;
         log.info("Received PUT on /api/expenses (targetId={})", targetId);
-        if (targetId == null) return ResponseEntity.badRequest().build();
+        if (targetId == null)
+            return ResponseEntity.badRequest().build();
 
         return service.findById(targetId)
                 .map(existing -> {
@@ -80,10 +81,11 @@ public class ExpenseController {
     }
 
     // ✅ DELETE /api/expenses/{id} or /api/expenses/delete/{id}
-    @DeleteMapping(path = {"/delete/{id}", "/{id}"})
+    @DeleteMapping(path = { "/delete/{id}", "/{id}" })
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         log.info("Received DELETE on /api/expenses (id={})", id);
-        if (!service.existsById(id)) return ResponseEntity.notFound().build();
+        if (!service.existsById(id))
+            return ResponseEntity.notFound().build();
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
