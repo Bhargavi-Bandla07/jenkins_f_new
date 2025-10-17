@@ -72,7 +72,7 @@
     </dependencies>
 
     <build>
-        <finalName>Expense_backend1</finalName>
+        <finalName>expense_backend2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
